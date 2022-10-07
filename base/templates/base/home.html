@@ -12,8 +12,7 @@
 <div class="home-container">
     <div>
         <h3>Topics</h3>
-        <hr>
-
+        <hr>        
         <div>
             <a href="{% url 'home' %}"></a>
         </div>
@@ -27,6 +26,10 @@
 
     <div>
         <a href="{% url 'create-room' %}">Create Room</a>
+
+        <h5>
+            {{ room_count }} rooms available!
+        </h5>
 
         <div>
             {% for room in rooms %}
