@@ -1,9 +1,8 @@
 from multiprocessing import context
 from django.shortcuts import render, redirect
-from .models import Message, Room, Topic
+from .models import Message, Room, Topic, User
 from .forms import RoomForm, UserForm
 from django.db.models import Q
-from django.contrib.auth.models import User
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.decorators import login_required
@@ -172,4 +171,5 @@ def updateUser(request):
         if form.is_valid():
             form.save()
             return redirect('user-profile', key=user.id)
-    return render(request, 'base/update_user.html', {'form' : form})
+    return render(request, 'base/update-user.html', {'form' : form})
+
